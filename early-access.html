@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NAD+ Early Access Program — Doselets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue: #005E92;
+  --blue-dark: #004E78;
+  --blue-soft: #EAF4FA;
+  --ink: #05070A;
+  --text: #2F3741;
+  --muted: #667382;
+  --line: #DDE8EF;
+  --paper: #FFFFFF;
+  --wash: #F7FAFC;
+  --card: #FFFFFF;
+  --shadow: 0 24px 70px rgba(7, 30, 44, 0.08);
+  --ease: cubic-bezier(.4, 0, .2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, .eyebrow, .nav-links, .btn, .btn-link, .step-number, .badge {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.045em;
+}
+
+p {
+  color: var(--text);
+}
+
+.site {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(0, 94, 146, 0.08), transparent 26%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 44%, #FFFFFF 100%);
+}
+
+.wrap {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.nav {
+  height: 82px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(0, 94, 146, 0.10);
+}
+
+.nav-inner {
+  height: 100%;
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.logo-img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.nav-links a {
+  color: var(--text);
+  position: relative;
+  padding: 10px 0;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--blue);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  transition: width .24s var(--ease);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--blue);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
+  font-size: 14px;
+  font-weight: 750;
+  box-shadow: 0 18px 36px rgba(0, 94, 146, .18);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--blue-dark);
+  box-shadow: 0 22px 46px rgba(0, 94, 146, .25);
+}
+
+.btn.secondary {
+  background: #fff;
+  color: var(--blue);
+  box-shadow: none;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 9px;
+  border-bottom: 2px solid var(--blue);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.btn-link:hover {
+  color: var(--blue);
+}
+
+.eyebrow {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  margin-bottom: 16px;
+}
+
+.hero {
+  padding: 88px 0 82px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, .86fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(46px, 5.6vw, 82px);
+  line-height: 1;
+  font-weight: 850;
+  max-width: 740px;
+}
+
+.hero p {
+  margin-top: 24px;
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.62;
+  max-width: 680px;
+}
+
+.hero-note {
+  font-size: 14px !important;
+  color: var(--muted);
+  margin-top: 18px !important;
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  background: #fff;
+  border: 1px solid #E8F0F5;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.hero-image {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.section {
+  padding: 92px 0;
+}
+
+.soft {
+  background: var(--wash);
+  border-top: 1px solid rgba(0, 94, 146, .08);
+  border-bottom: 1px solid rgba(0, 94, 146, .08);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 68px;
+  align-items: center;
+}
+
+.copy h2,
+.section-head h2 {
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.04;
+}
+
+.copy p,
+.section-head p {
+  margin-top: 22px;
+  font-size: 17px;
+  line-height: 1.76;
+}
+
+.info-panel {
+  background: #fff;
+  border: 1px solid #E8F0F5;
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 22px 56px rgba(18, 41, 56, .06);
+}
+
+.info-panel h3 {
+  font-size: 26px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.info-panel p {
+  font-size: 16px;
+  line-height: 1.72;
+  margin-bottom: 18px;
+}
+
+.benefits {
+  background: #fff;
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: 42px;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.benefit-card {
+  background: #fff;
+  border: 1px solid #E8F0F5;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 22px 56px rgba(18, 41, 56, .06);
+  min-height: 240px;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 70px rgba(7, 30, 44, .12);
+}
+
+.badge {
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(0, 94, 146, .24);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--blue);
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.benefit-card h3 {
+  font-size: 20px;
+  line-height: 1.16;
+  margin-bottom: 12px;
+}
+
+.benefit-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.process {
+  background: var(--blue);
+  color: #fff;
+}
+
+.process .eyebrow,
+.process p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.process h2 {
+  color: #fff;
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.04;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 42px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 22px;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.08);
+  min-height: 150px;
+}
+
+.step-number {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: var(--blue);
+  font-weight: 850;
+}
+
+.step h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 15px;
+  line-height: 1.64;
+}
+
+.process-note {
+  margin-top: 28px;
+  font-size: 14px !important;
+  color: rgba(255,255,255,.72) !important;
+}
+
+.apply {
+  background:
+    radial-gradient(circle at 82% 42%, rgba(0, 94, 146, .08), transparent 28%),
+    linear-gradient(90deg, #F7FBFD 0%, #FFFFFF 100%);
+}
+
+.apply-card {
+  background: #fff;
+  border: 1px solid #E8F0F5;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 40px;
+}
+
+.apply-card h3 {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.apply-card p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.form-preview {
+  display: grid;
+  gap: 14px;
+  margin: 26px 0 24px;
+}
+
+.field {
+  min-height: 54px;
+  border: 1px solid #DDE8EF;
+  background: #FBFDFE;
+  border-radius: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+.apply-card .btn {
+  width: 100%;
+}
+
+.disclaimer {
+  font-size: 12px !important;
+  color: var(--muted) !important;
+  line-height: 1.6 !important;
+  margin-top: 18px !important;
+}
+
+.quote {
+  padding: 76px 0;
+  text-align: center;
+}
+
+blockquote {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+  font-weight: 850;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+cite {
+  display: block;
+  margin-top: 22px;
+  color: var(--muted);
+  font-style: normal;
+  font-size: 15px;
+}
+
+.footer {
+  padding: 44px 0;
+  background: #fff;
+  border-top: 1px solid #E8F0F5;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  gap: 54px;
+}
+
+.footer-info {
+  border-left: 1px solid rgba(0,94,146,.38);
+  padding-left: 38px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .72s var(--ease), transform .72s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: .08s; }
+.delay-2 { transition-delay: .16s; }
+.delay-3 { transition-delay: .24s; }
+
+.float-soft {
+  animation: floatSoft 5.5s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .float-soft {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .nav {
+    height: auto;
+    padding: 16px 0;
+  }
+
+  .nav-inner {
+    grid-template-columns: auto auto;
+    width: min(100% - 32px, 1240px);
+  }
+
+  .nav-links {
+    order: 3;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    gap: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+
+  .hero-grid,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 64px 0;
+  }
+
+  .hero-image,
+  .hero-image img {
+    min-height: 320px;
+  }
+
+  .benefit-grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    width: min(100% - 32px, 1160px);
+  }
+
+  .nav .btn {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+
+  .hero-actions {
+    gap: 24px;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-info {
+    padding-left: 22px;
+  }
+}
+
+/* ===== All headers in Montserrat ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.eyebrow,
+.nav-links,
+.btn,
+.btn-link,
+.card h3,
+.compare-card h3,
+.step h3,
+.benefit-card h3,
+blockquote {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800 !important;
+}
+
+
+/* ===== Uploaded full logo image styling ===== */
+.logo-img {
+  display: block;
+  width: auto;
+  height: 38px;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+</style>
+</head>
+
+<body>
+<main class="site">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" aria-label="Doselets home">
+      <img class="logo-img" src="doselets-logo-full.png" alt="Doselets">
+    </a>
+
+    <div class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <a class="btn" href="#apply">Early Access Program</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Clinical Early Access</span>
+      <h1>The NAD+ Doselet Clinical Early Access Program</h1>
+      <p>We’re inviting a select group of clinician-led practices to join before our first commercial batch ships. No payment required. No purchase obligation – just a chance to be among the first to offer it.</p>
+      <p class="hero-note">It takes less than five minutes to fill out the form linked below.</p>
+
+      <div class="hero-actions">
+        <a class="btn" href="https://forms.gle/1mZs4tNLzbdDZk4p9" target="_blank" rel="noopener">Submit Your Practice Profile</a>
+        <a class="btn-link" href="#meet">Meet the Doselet</a>
+      </div>
+    </div>
+
+    <div class="image-card hero-image reveal delay-1 float-soft">
+      <img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/d1038b1f-514f-4052-81a4-d3ce0e0b7b64/doselet_hand_option_C.png" alt="Doselet in hand">
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="meet">
+  <div class="wrap grid-2">
+    <div class="copy reveal">
+      <span class="eyebrow">Meet the Doselet</span>
+      <h2>Meet the Doselet.</h2>
+      <p>A centimeter-sized, plant-based nanofiber patch applied to the inside of the cheek. It dissolves in seconds and delivers 10mg of NAD+ directly through the buccal mucosa. No needles, no pills, no fuss.</p>
+      <p>Patients place it, forget it and get on with their day. It’s the daily NAD+ format they’ll actually stick with between visits. We’re thrilled to be the first to bring this delivery format to the nutraceuticals space.</p>
+      <p>Doselets are sold in 30-packs, making them easy to retail per unit, bundle into a subscription or align with monthly clinic visits.</p>
+    </div>
+
+    <div class="image-card reveal delay-1">
+      <img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/750436eb-bc79-4cae-9c13-5b042e63bf4f/alt_circle_doselet_only.png" alt="Doselet delivery diagram">
+    </div>
+  </div>
+</section>
+
+<section class="section benefits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why clinics are joining</span>
+      <h2>Why clinics like yours are joining the list.</h2>
+    </div>
+
+    <div class="benefit-grid">
+      <article class="benefit-card reveal">
+        <div class="badge">01</div>
+        <h3>First-batch consideration.</h3>
+        <p>Be among the first clinics to receive the Doselet before it reaches the broader market.</p>
+      </article>
+
+      <article class="benefit-card reveal delay-1">
+        <div class="badge">02</div>
+        <h3>Clinician-oriented onboarding.</h3>
+        <p>Early access clinics receive product education, patient-facing FAQs, and special offers before broad launch.</p>
+      </article>
+
+      <article class="benefit-card reveal delay-2">
+        <div class="badge">03</div>
+        <h3>Early visibility.</h3>
+        <p>Get development and launch updates directly – before anyone else.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Four simple steps from profile to allocation.</h2>
+    </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step-number">1</div>
+        <div>
+          <h3>Submit your practice profile</h3>
+          <p>Tell us about your clinic type, patient volume and focus. No payment required.</p>
+        </div>
+      </article>
+
+      <article class="step reveal delay-1">
+        <div class="step-number">2</div>
+        <div>
+          <h3>We review your fit</h3>
+          <p>We’re hand-selecting clinics. If yours is a match, we’ll be in touch directly.</p>
+        </div>
+      </article>
+
+      <article class="step reveal delay-2">
+        <div class="step-number">3</div>
+        <div>
+          <h3>You’re invited to a briefing</h3>
+          <p>Qualified clinics are invited to a product or founder call to ask questions and learn more.</p>
+        </div>
+      </article>
+
+      <article class="step reveal delay-3">
+        <div class="step-number">4</div>
+        <div>
+          <h3>First-batch allocation is offered</h3>
+          <p>When the batch is ready, selected clinics receive full pricing, terms and an invoice upfront so you know exactly what you’re committing to before you do. You pay only when your order ships.</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="process-note reveal">Current target availability: Q3 2026. Subject to manufacturing, packaging, compliance review and quality release.</p>
+  </div>
+</section>
+
+<section class="section apply" id="apply">
+  <div class="wrap grid-2">
+    <div class="copy reveal">
+      <span class="eyebrow">Ready to Join?</span>
+      <h2>Ready to Join?</h2>
+      <p>Submit your practice profile below. It takes less than five minutes and requires no payment or commitment at any stage.</p>
+      <p>We’re looking forward to hearing from you.</p>
+      <p>Questions before you apply? Reach us directly at hello@doselets.com</p>
+
+      <div class="hero-actions">
+        <a class="btn" href="https://forms.gle/3bM9hAdHm471t3Pv8" target="_blank" rel="noopener">Join the Early Access Program</a>
+      </div>
+    </div>
+
+    <div class="image-card reveal delay-1">
+      <img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/545cc919-d56a-48f7-943e-f35872061635/flatlay_45deg%2B%281%29.png" alt="Doselets lifestyle flatlay">
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap reveal">
+    <blockquote>“The Doselet: Wellness at your fingertips”</blockquote>
+    <cite>Teryn Wolfe, CEO & Founder</cite>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a href="index.html" aria-label="Doselets home">
+      <img class="logo-img" src="doselets-logo-full.png" alt="Doselets">
+    </a>
+
+    <div class="footer-info">
+      <div>Doselets by Nexture Bio</div>
+      <div>Vacaville, CA</div>
+      <div>hello@doselets.com</div>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const revealEls = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    revealEls.forEach(el => el.classList.add("visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  revealEls.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>

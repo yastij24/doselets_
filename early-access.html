@@ -658,6 +658,40 @@ h6 {
   object-fit: contain;
 }
 
+
+/* Final local image fixes */
+.image-card {
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-product-image img {
+  object-fit: contain;
+  background: #ffffff;
+  padding: 24px;
+}
+
+#problem .image-card img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+footer .logo-img,
+.nav .logo-img {
+  min-height: auto;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+}
+
 </style>
 </head>
 
@@ -804,7 +838,7 @@ h6 {
     </div>
 
     <div class="image-card reveal delay-1">
-      <img src="palm-doselets.webp" alt="Three Doselets in hand">
+      <img src="palm-doselets.png" alt="Three Doselets in hand">
     </div>
   </div>
 </section>

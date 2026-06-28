@@ -460,7 +460,35 @@ h6 {
   display: block;
 }
 
-</style></head><body><main class="site"><nav class="nav"><div class="nav-inner"><a href="index.html" aria-label="Doselets home"><img class="logo-img" src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/1cf1e250-1999-4a7f-a683-c8625bbe7d20/Doselets_Logo_2Clr_Royal+%281%29.png?format=1500w" alt="Doselets logo"></a><div class="nav-links" aria-label="Primary navigation"><a class="active" href="index.html">Home</a><a class="" href="contact.html">Contact Us</a></div><a class="btn" href="early-access.html">Early Access Program</a></div></nav>
+
+/* ===== Correct final CTA image ===== */
+section:last-of-type .image-card {
+  overflow: hidden;
+}
+
+section:last-of-type .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+
+/* FINAL VERSION: last CTA image is the bag lifestyle image */
+#clinics .image-card img,
+section:last-of-type .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+</style></head><body>
+<!-- DOSELETS FINAL LATEST DEPLOY: CTA BAG IMAGE UPDATED --><main class="site"><nav class="nav"><div class="nav-inner"><a href="index.html" aria-label="Doselets home"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="nav-links" aria-label="Primary navigation"><a class="active" href="index.html">Home</a><a class="" href="contact.html">Contact Us</a></div><a class="btn" href="early-access.html">Early Access Program</a></div></nav>
 <section class="hero fade-in-now"><div class="wrap hero-grid"><div>
 
 
@@ -500,8 +528,8 @@ h6 {
 </div>
 
 </section>
-<section class="section reveal"><div class="wrap grid-2"><div><span class="eyebrow">For Wellness Clinics & Practitioners</span><h2>Our Innovation is your Opportunity.</h2><p style="margin-top:20px"><strong>Your patients want NAD+. This is the daily habit your patients will actually stick to.</strong></p><div class="hero-actions"><a class="btn" href="contact.html">Join our early access program</a></div></div><div class="image-card reveal delay-1"><img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/750436eb-bc79-4cae-9c13-5b042e63bf4f/alt_circle_doselet_only.png" alt="Doselet benefits"></div></div></section>
-<footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/1cf1e250-1999-4a7f-a683-c8625bbe7d20/Doselets_Logo_2Clr_Royal+%281%29.png?format=1500w" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main>
+<section class="section reveal"><div class="wrap grid-2"><div><span class="eyebrow">For Wellness Clinics & Practitioners</span><h2>Our Innovation is your Opportunity.</h2><p style="margin-top:20px"><strong>Your patients want NAD+. This is the daily habit your patients will actually stick to.</strong></p><div class="hero-actions"><a class="btn" href="contact.html">Join our early access program</a></div></div><div class="image-card reveal delay-1"><img src="FINAL-bag-lifestyle-image.png" alt="Doselet lifestyle bag image"></div></div></section>
+<footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const revealEls = document.querySelectorAll(".reveal");

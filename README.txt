@@ -1,17 +1,12 @@
-Doselets deploy-ready site
+Doselets final deploy-ready website
 
-Files included:
-- index.html
-- early-access.html
-- contact.html
-- image assets used by the pages
+This version uses unique, non-repeating images:
+- hero-doselet-hand-white.png for the hero
+- problem-doselets-overhead.webp for the problem section
+- second-section-image.png for the Why Doselets section
+- cta-man-pocket.png for the final CTA section
 
-How to deploy on Vercel:
-1. Unzip this file.
-2. Open the unzipped folder.
-3. Make sure index.html is directly inside the folder, not inside another nested folder.
-4. Drag the entire folder into https://vercel.com/drop.
-5. After deployment, test:
-   /index.html
-   /early-access.html
-   /contact.html
+Deploy:
+1. Unzip this ZIP.
+2. Drag the unzipped folder to Vercel Drop.
+3. Confirm index.html is at the root level.

@@ -1,0 +1,27 @@
+Doselets website typography notes
+
+Headers / H1 / H2 / H3:
+- Montserrat
+- Weight: 800
+- H1 letter-spacing: 0em so letters do not touch
+- H1 line-height: 1.02
+- H2 letter-spacing: -0.01em
+
+Eyebrow labels / nav / buttons:
+- Montserrat
+- SemiBold/Bold
+
+Body copy:
+- Helvetica
+- 17px
+- Line-height 1.65–1.75
+
+Problem section body:
+- Helvetica Bold
+- 17px
+- 1.75 line-height
+
+Clinic CTA body:
+- Helvetica Bold
+- 17px
+- 1.65 line-height

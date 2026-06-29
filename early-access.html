@@ -692,6 +692,406 @@ footer .logo-img,
   background: transparent;
 }
 
+
+/* ===== Final typography + spacing standardization ===== */
+:root {
+  --heading-font: "Montserrat", Arial, sans-serif;
+  --body-font: Helvetica, Arial, sans-serif;
+  --brand-blue: #005E92;
+  --ink: #070A0F;
+  --body: #303640;
+  --muted-copy: #56616D;
+  --soft-blue: #F4FAFD;
+  --line-soft: #E3EDF3;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--body);
+  letter-spacing: 0;
+}
+
+h1, h2, h3, h4,
+.nav a,
+.btn,
+.eyebrow,
+.card .num,
+.compare-card h3 {
+  font-family: var(--heading-font);
+}
+
+h1 {
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  max-width: 780px;
+}
+
+h2 {
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  max-width: 760px;
+}
+
+h3 {
+  letter-spacing: -0.018em;
+  line-height: 1.16;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.72;
+  letter-spacing: -0.005em;
+  max-width: 680px;
+}
+
+.copy p,
+.section p,
+.hero p {
+  margin-top: 22px;
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.section {
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
+.hero {
+  padding-top: 112px;
+  padding-bottom: 104px;
+}
+
+.grid-2,
+.hero-grid {
+  gap: clamp(56px, 7vw, 112px);
+  align-items: center;
+}
+
+.btn {
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.card p,
+.compare-card p {
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.card,
+.compare-card {
+  padding: 30px;
+}
+
+/* Image consistency */
+.image-card {
+  overflow: hidden;
+  background: #fff;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-product-image img {
+  object-fit: contain;
+  background: #fff;
+  padding: 34px;
+}
+
+#problem .image-card img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+footer .logo-img,
+.nav .logo-img {
+  min-height: auto !important;
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+}
+
+/* Early access: blue is an accent, not a heavy block */
+.early-blue-band,
+.blue-band,
+.brand-band {
+  background: linear-gradient(90deg, var(--brand-blue), #0A6FA3);
+  min-height: 8px !important;
+  height: 8px !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 900px) {
+  h1 { letter-spacing: -0.04em; }
+  h2 { letter-spacing: -0.035em; }
+  p { font-size: 16px; line-height: 1.65; }
+  .section, .hero { padding-top: 72px; padding-bottom: 72px; }
+  .grid-2, .hero-grid { gap: 40px; }
+}
+
+
+/* ===== Final rhythm/grid/component system ===== */
+:root {
+  --container: 1180px;
+  --gutter: 32px;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 88px;
+  --space-section: 120px;
+
+  --radius-card: 28px;
+  --radius-button: 8px;
+
+  --shadow-card: 0 24px 70px rgba(0, 94, 146, 0.10);
+  --shadow-button: 0 18px 44px rgba(0, 94, 146, 0.18);
+}
+
+/* One locked site grid */
+.wrap,
+.nav-inner,
+.footer-inner {
+  width: min(var(--container), calc(100% - 64px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-grid,
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gutter);
+  align-items: center;
+}
+
+.hero-grid > *,
+.grid-2 > * {
+  grid-column: span 6;
+}
+
+/* Consistent vertical rhythm */
+.hero,
+.section {
+  padding-top: var(--space-section) !important;
+  padding-bottom: var(--space-section) !important;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(0, 94, 146, 0.08);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3) !important;
+}
+
+h1 {
+  font-size: clamp(64px, 7vw, 104px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-size: clamp(44px, 4.9vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+h3 {
+  font-size: clamp(20px, 1.7vw, 26px);
+  line-height: 1.18;
+  letter-spacing: -0.016em;
+}
+
+p,
+.copy p,
+.section p,
+.hero p {
+  margin-top: var(--space-3) !important;
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.lead,
+.section-subhead {
+  margin-top: var(--space-2) !important;
+  margin-bottom: var(--space-5) !important;
+  max-width: 640px;
+  font-size: 20px !important;
+  line-height: 1.55 !important;
+  color: var(--muted-copy, #56616D) !important;
+  font-weight: 400;
+}
+
+/* Softer modulation so every section does not shout equally */
+.section h2 {
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-weight: 900;
+}
+
+.section:not(.hero) h2 + p,
+.section-subhead {
+  font-weight: 400;
+}
+
+/* Image and button language now match */
+.image-card {
+  border-radius: var(--radius-card) !important;
+  box-shadow: var(--shadow-card) !important;
+  border: 1px solid rgba(0, 94, 146, 0.10) !important;
+  overflow: hidden;
+  background: #fff;
+}
+
+.btn {
+  min-width: 220px;
+  justify-content: center;
+  text-align: center;
+  border-radius: var(--radius-button) !important;
+  box-shadow: var(--shadow-button) !important;
+  padding: 18px 28px !important;
+  line-height: 1 !important;
+}
+
+/* Comparison module: cleaner grid and hierarchy */
+.compare-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: var(--gutter) !important;
+  margin-top: var(--space-5) !important;
+}
+
+.compare-card {
+  grid-column: span 4;
+  min-height: 210px;
+  padding: var(--space-4) !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 94, 146, 0.12) !important;
+}
+
+.compare-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.compare-card p {
+  margin-top: var(--space-2) !important;
+  font-size: 16px !important;
+  line-height: 1.62 !important;
+}
+
+/* Card module consistency */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gutter);
+  margin-top: var(--space-5);
+}
+
+.card {
+  grid-column: span 3;
+  border-radius: var(--radius-card) !important;
+  padding: var(--space-4) !important;
+  border: 1px solid rgba(0, 94, 146, 0.12) !important;
+  box-shadow: none !important;
+}
+
+.card .num {
+  margin-bottom: var(--space-2);
+}
+
+.card p {
+  margin-top: var(--space-2) !important;
+}
+
+/* Early Access blue rationale: accent only */
+.early-blue-band,
+.blue-band,
+.brand-band {
+  height: 8px !important;
+  min-height: 8px !important;
+  padding: 0 !important;
+  background: #005E92 !important;
+}
+
+/* Keep two-column blocks balanced */
+.grid-2 .copy,
+.hero-grid > div:first-child {
+  align-self: center;
+}
+
+.grid-2 .image-card,
+.hero-grid .image-card {
+  align-self: center;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  :root {
+    --space-section: 80px;
+    --gutter: 24px;
+  }
+
+  .wrap,
+  .nav-inner,
+  .footer-inner {
+    width: min(var(--container), calc(100% - 40px));
+  }
+
+  .hero-grid > *,
+  .grid-2 > *,
+  .compare-card,
+  .card {
+    grid-column: 1 / -1;
+  }
+
+  .compare-grid,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: clamp(48px, 12vw, 72px);
+  }
+
+  h2 {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .btn {
+    min-width: 200px;
+  }
+}
+
 </style>
 </head>
 
@@ -744,7 +1144,7 @@ footer .logo-img,
     </div>
 
     <div class="image-card reveal delay-1">
-      <img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/750436eb-bc79-4cae-9c13-5b042e63bf4f/alt_circle_doselet_only.png" alt="Doselet delivery diagram">
+      <img src="early-access-pocket.png" alt="Doselet pocket lifestyle image">
     </div>
   </div>
 </section>

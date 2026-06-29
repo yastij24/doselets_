@@ -1,0 +1,27 @@
+Doselets design refinement notes
+
+Changes made from feedback:
+1. Consistent vertical rhythm
+- Defined a spacing scale from 8px to 120px.
+- Section padding is fixed at 120px top/bottom desktop and 80px mobile.
+- Two-column sections are vertically centered so copy/image blocks balance.
+
+2. Locked grid
+- Main containers are now max-width 1180px.
+- Two-column layouts use a 12-column grid with consistent 32px gutters.
+- Cards and comparison modules use the same grid logic.
+
+3. Type hierarchy
+- Eyebrows remain a consistent label system.
+- H1 remains strongest; H2 is slightly moderated so not every section shouts.
+- Paragraph line-height increased to 1.72.
+- “Doselets vs. Everyone Else” now uses a defined section-subhead style instead of feeling like an orphan caption.
+
+4. Component consistency
+- Buttons and image cards now use a shared visual language.
+- Image cards: 28px radius, soft clinical shadow.
+- Buttons: consistent radius, min-width, and shadow.
+
+5. Early Access blue rationale
+- Blue is treated as a trust/clinical-tech accent for CTAs, labels, rules, and small brand moments.
+- Large heavy blue blocks were reduced so the page feels more premium and less visually heavy.

@@ -1,0 +1,8 @@
+Latest updates:
+- Homepage header replaced with the new Bioactive Delivery, Solved header graphic.
+- Early Access eyebrow labels updated:
+  * Meet the Doselet -> Delivery Reimagined
+  * Ready to Join? -> Early Access Program
+  * Why clinics are joining -> Three Reasons to Join Early Access
+- Early Access benefit card headers no longer have periods.
+- Removed comma after FAQs in the Clinician-oriented onboarding card.

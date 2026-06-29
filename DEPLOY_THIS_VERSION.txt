@@ -1,0 +1,10 @@
+Deploy this folder/ZIP.
+
+Included updates:
+- Homepage header replaced with the Bioactive Delivery, Solved full-width header graphic.
+- Early Access blue eyebrow labels updated:
+  Delivery Reimagined
+  Three Reasons to Join Early Access
+  Early Access Program
+- Benefit card periods removed.
+- Comma after FAQs removed.

@@ -304,8 +304,203 @@ h3 {
   letter-spacing: 0 !important;
 }
 
+
+/* ===== Stronger contact page ===== */
+.contact-hero {
+  padding: 92px 0 104px;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(0, 94, 146, 0.08), transparent 28%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 100%);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1fr);
+  gap: clamp(56px, 7vw, 96px);
+  align-items: center;
+}
+
+.contact-copy h1 {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+  font-size: clamp(48px, 5.4vw, 76px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.015em !important;
+  max-width: 720px;
+}
+
+.contact-copy .lead {
+  margin-top: 24px;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 19px !important;
+  line-height: 1.68 !important;
+  color: var(--text);
+  max-width: 640px;
+}
+
+.contact-actions {
+  margin-top: 34px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-actions .btn {
+  min-width: 220px;
+  border-radius: 8px;
+}
+
+.contact-actions .btn.secondary {
+  background: #fff;
+  color: var(--blue);
+  box-shadow: none;
+}
+
+.contact-cards {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 680px;
+}
+
+.mini-card {
+  background: #fff;
+  border: 1px solid #E3EDF3;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 18px 46px rgba(7, 30, 44, 0.06);
+}
+
+.mini-label {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+
+.mini-card h3 {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.mini-card p {
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.contact-visual {
+  position: relative;
+}
+
+.contact-visual .image-card {
+  border-radius: 30px;
+  min-height: 500px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #E3EDF3;
+  box-shadow: 0 30px 80px rgba(7, 30, 44, 0.11);
+}
+
+.contact-visual .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.contact-note {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 94, 146, 0.12);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 18px 50px rgba(7, 30, 44, 0.10);
+}
+
+.contact-note strong {
+  display: block;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.contact-note span {
+  display: block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+}
+
+@media (max-width: 980px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-visual .image-card,
+  .contact-visual .image-card img {
+    min-height: 380px;
+  }
+}
+
 </style></head><body><main class="site"><nav class="nav"><div class="nav-inner"><a href="index.html" aria-label="Doselets home"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="nav-links" aria-label="Primary navigation"><a class="" href="index.html">Home</a><a class="active" href="contact.html">Contact Us</a></div><a class="btn" href="early-access.html">Early Access Program</a></div></nav>
-<section class="hero fade-in-now"><div class="wrap hero-grid"><div><h1>Get Started with Doselets.</h1><p>Apply for <a class="btn-link" href="early-access.html">early access</a>, or contact us directly at hello@doselets.com to learn more about our novel delivery platform and what it can do for your practice.</p><div class="hero-actions"><a class="btn" href="early-access.html">Apply for early access</a><a class="btn-link" href="mailto:hello@doselets.com">hello@doselets.com</a></div></div><div class="image-card reveal delay-1 float-soft"><img src="pocket-doselet.png" alt="Doselet in pocket"></div></div></section>
+
+<section class="contact-hero fade-in-now">
+  <div class="wrap contact-grid">
+    <div class="contact-copy">
+      <span class="eyebrow">Contact Doselets</span>
+      <h1>Start your Early Access conversation.</h1>
+      <p class="lead">Interested in offering the NAD+ Doselet in your clinic? Apply for early access or reach out directly — we’ll help you understand fit, timing, and next steps.</p>
+
+      <div class="contact-actions">
+        <a class="btn" href="early-access.html">Apply for early access</a>
+        <a class="btn secondary" href="mailto:hello@doselets.com">Email hello@doselets.com</a>
+      </div>
+
+      <div class="contact-cards">
+        <div class="mini-card">
+          <div class="mini-label">01</div>
+          <h3>Submit your practice profile</h3>
+          <p>Tell us about your clinic, patient focus, and interest in Doselets.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-label">02</div>
+          <h3>We review fit</h3>
+          <p>Qualified practices are contacted with product and launch details.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-visual">
+      <div class="image-card">
+        <img src="early-access-student-pocket.jpg" alt="Person placing a Doselet into a shirt pocket">
+      </div>
+      <div class="contact-note">
+        <strong>Questions before you apply?</strong>
+        <span>Email us directly at hello@doselets.com</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main>
 <script>
 document.addEventListener("DOMContentLoaded", () => {

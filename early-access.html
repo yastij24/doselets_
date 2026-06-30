@@ -201,9 +201,9 @@ p {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(360px, .86fr);
-  gap: 72px;
-  align-items: stretch; /* both columns grow to the same height */
+  grid-template-columns: 1fr 300px; /* fixed small column for the image */
+  gap: 56px;
+  align-items: center;
 }
 
 .hero h1 {
@@ -246,10 +246,10 @@ p {
 .hero-image-wrap {
   position: relative;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
-  align-self: stretch; /* fill full grid row height */
-  min-height: 460px;   /* floor so it never collapses */
+  width: 300px;
+  height: 300px;
 }
 
 /* decorative blob behind the card */
@@ -267,13 +267,12 @@ p {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;           /* fill the full wrap height */
+  height: 100%;
   background: #FFFFFF;
   border: 1px solid #E0EBF3;
-  border-radius: 26px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(7, 30, 44, 0.10), 0 4px 16px rgba(0, 94, 146, 0.07);
-  /* no aspect-ratio — card height is driven by the text column */
+  box-shadow: 0 24px 60px rgba(7, 30, 44, 0.12), 0 4px 14px rgba(0, 94, 146, 0.08);
 }
 
 .hero-image-card img {
@@ -649,12 +648,13 @@ footer .logo-img,
   }
 
   .hero-image-wrap {
-    min-height: 320px;
+    width: 100%;
+    height: 280px;
     align-self: auto;
   }
 
   .hero-image-card {
-    height: 320px; /* explicit height when grid is stacked */
+    height: 280px;
   }
 
   .benefit-grid,
@@ -692,6 +692,8 @@ footer .logo-img,
 
   .hero-image-wrap {
     min-height: 260px;
+    width: 100%;
+    height: 260px;
   }
 
   .hero-image-card {

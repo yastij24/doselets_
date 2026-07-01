@@ -94,10 +94,8 @@ p {
 }
 
 .logo-img {
-  display: block;
+  height: 30px;
   width: auto;
-  height: 38px;
-  max-width: 250px;
   object-fit: contain;
 }
 
@@ -143,27 +141,24 @@ p {
   align-items: center;
   min-height: 48px;
   padding: 0 24px;
-  background: var(--blue) !important;
-  color: #fff !important;
-  border: 1px solid var(--blue) !important;
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
   font-size: 14px;
   font-weight: 750;
-  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
   box-shadow: 0 18px 36px rgba(0, 94, 146, .18);
   transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease);
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  background: var(--blue-dark) !important;
+  background: var(--blue-dark);
   box-shadow: 0 22px 46px rgba(0, 94, 146, .25);
 }
 
 .btn.secondary {
-  background: #fff !important;
-  color: var(--blue) !important;
+  background: #fff;
+  color: var(--blue);
   box-shadow: none;
 }
 
@@ -172,16 +167,13 @@ p {
   align-items: center;
   padding-bottom: 9px;
   border-bottom: 2px solid var(--blue);
-  color: var(--ink) !important;
+  color: var(--ink);
   font-size: 15px;
   font-weight: 700;
-  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .btn-link:hover {
-  color: var(--blue) !important;
+  color: var(--blue);
 }
 
 .eyebrow {
@@ -194,37 +186,34 @@ p {
   margin-bottom: 16px;
 }
 
-/* ─── HERO ─────────────────────────────────────────── */
 .hero {
   padding: 42px 0 56px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 480px; /* wider image column */
-  gap: 56px;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, .86fr);
+  gap: 72px;
   align-items: center;
 }
 
 .hero h1 {
-  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
   font-size: clamp(46px, 5.6vw, 82px);
-  line-height: 1.02;
-  font-weight: 800 !important;
-  letter-spacing: 0 !important;
+  line-height: 1;
+  font-weight: 850;
   max-width: 740px;
 }
 
 .hero p {
   margin-top: 24px;
-  font-size: clamp(17px, 1.7vw, 21px) !important;
-  line-height: 1.62 !important;
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.62;
   max-width: 680px;
 }
 
 .hero-note {
   font-size: 14px !important;
-  color: var(--muted) !important;
+  color: var(--muted);
   margin-top: 18px !important;
 }
 
@@ -236,55 +225,6 @@ p {
   flex-wrap: wrap;
 }
 
-/* ─── HERO IMAGE CARD ────────────────────────────────
-   The card is a rounded, shadowed frame.
-   The image is contained (not cropped) so the full
-   photo is visible, centred on a white background.
-   A soft blob gradient sits behind the card to lift
-   it off the page without any overlap effect.
-──────────────────────────────────────────────────── */
-.hero-image-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 480px;
-  height: 300px;
-}
-
-/* decorative blob behind the card */
-.hero-image-wrap::before {
-  content: "";
-  position: absolute;
-  inset: -28px -24px;
-  background: radial-gradient(ellipse at 60% 40%, rgba(0, 94, 146, 0.10) 0%, rgba(0, 94, 146, 0.04) 55%, transparent 75%);
-  border-radius: 56px;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-image-card {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background: #FFFFFF;
-  border: 1px solid #E0EBF3;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(7, 30, 44, 0.12), 0 4px 14px rgba(0, 94, 146, 0.08);
-}
-
-.hero-image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;          /* fills the card, no white gaps */
-  object-position: center top; /* keep the face/subject in frame */
-  display: block;
-  padding: 0;                 /* no padding — image goes edge to edge */
-}
-
-/* ─── OTHER IMAGE CARDS (non-hero) ───────────────── */
 .image-card {
   background: #fff;
   border: 1px solid #E8F0F5;
@@ -293,16 +233,20 @@ p {
   box-shadow: var(--shadow);
 }
 
-.image-card img {
-  width: 100%;
-  height: 100%;
-  min-height: 380px;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
+.hero-image {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ─────────────────────────────────────────────────── */
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  object-position: center;
+}
 
 .section {
   padding: 72px 0;
@@ -323,18 +267,15 @@ p {
 
 .copy h2,
 .section-head h2 {
-  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
   font-size: clamp(34px, 4.2vw, 58px);
-  line-height: 1.05;
-  font-weight: 800 !important;
-  letter-spacing: -0.01em !important;
+  line-height: 1.04;
 }
 
 .copy p,
 .section-head p {
   margin-top: 22px;
-  font-size: 17px !important;
-  line-height: 1.76 !important;
+  font-size: 17px;
+  line-height: 1.76;
 }
 
 .info-panel {
@@ -352,8 +293,8 @@ p {
 }
 
 .info-panel p {
-  font-size: 16px !important;
-  line-height: 1.72 !important;
+  font-size: 16px;
+  line-height: 1.72;
   margin-bottom: 18px;
 }
 
@@ -396,7 +337,6 @@ p {
   place-items: center;
   color: var(--blue);
   font-weight: 800;
-  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
   margin-bottom: 22px;
 }
 
@@ -408,8 +348,8 @@ p {
 
 .benefit-card p {
   color: var(--muted);
-  font-size: 15px !important;
-  line-height: 1.65 !important;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 .process {
@@ -455,7 +395,6 @@ p {
   background: #fff;
   color: var(--blue);
   font-weight: 850;
-  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
 }
 
 .step h3 {
@@ -465,8 +404,8 @@ p {
 }
 
 .step p {
-  font-size: 15px !important;
-  line-height: 1.64 !important;
+  font-size: 15px;
+  line-height: 1.64;
 }
 
 .process-note {
@@ -495,8 +434,8 @@ p {
 }
 
 .apply-card p {
-  font-size: 16px !important;
-  line-height: 1.7 !important;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .form-preview {
@@ -534,7 +473,7 @@ p {
 }
 
 blockquote {
-  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-size: clamp(30px, 4vw, 54px);
   line-height: 1.06;
   letter-spacing: -.055em;
@@ -571,15 +510,6 @@ cite {
   line-height: 1.55;
 }
 
-footer .logo-img,
-.nav .logo-img {
-  min-height: auto;
-  object-fit: contain;
-  padding: 0;
-  background: transparent;
-}
-
-/* ─── REVEAL ANIMATIONS ─────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -614,7 +544,6 @@ footer .logo-img,
   }
 }
 
-/* ─── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 980px) {
   .nav {
     height: auto;
@@ -635,8 +564,13 @@ footer .logo-img,
     scrollbar-width: none;
   }
 
-  .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { white-space: nowrap; }
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
 
   .hero-grid,
   .grid-2 {
@@ -647,14 +581,9 @@ footer .logo-img,
     padding: 36px 0 48px;
   }
 
-  .hero-image-wrap {
-    width: 100%;
-    height: 280px;
-    align-self: auto;
-  }
-
-  .hero-image-card {
-    height: 280px;
+  .hero-image,
+  .hero-image img {
+    min-height: 320px;
   }
 
   .benefit-grid,
@@ -689,17 +618,186 @@ footer .logo-img,
   .footer-info {
     padding-left: 22px;
   }
+}
 
-  .hero-image-wrap {
-    min-height: 260px;
-    width: 100%;
-    height: 260px;
+/* ===== All headers in Montserrat ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.eyebrow,
+.nav-links,
+.btn,
+.btn-link,
+.card h3,
+.compare-card h3,
+.step h3,
+.benefit-card h3,
+blockquote {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800 !important;
+}
+
+
+/* ===== Uploaded full logo image styling ===== */
+.logo-img {
+  display: block;
+  width: auto;
+  height: 38px;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+
+/* Final local image fixes */
+.image-card {
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-product-image img {
+  object-fit: contain;
+  background: #ffffff;
+  padding: 24px;
+}
+
+#problem .image-card img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+footer .logo-img,
+.nav .logo-img {
+  min-height: auto;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+}
+
+
+/* ===== FINAL typography system ===== */
+h1,h2,h3,h4,h5,h6,.eyebrow,.nav-links,.btn,.btn-link,.num,.step-num {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+}
+body,p,.copy p,.section p,.hero p,.footer-info,.contact-card,.split-card,.card p,.compare-card p {
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+h1 {
+  letter-spacing: -0.025em !important;
+  line-height: 0.98 !important;
+}
+h2 {
+  letter-spacing: -0.025em !important;
+  line-height: 1.05 !important;
+}
+p {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+}
+.image-card img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+
+/* ===== FINAL headline letter-spacing correction ===== */
+/* Keeps Montserrat, but removes tight tracking so Bioactive c/t does not touch */
+h1 {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+  line-height: 1.02 !important;
+  font-weight: 800 !important;
+  font-kerning: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.hero h1,
+.hero h1 em {
+  letter-spacing: 0 !important;
+}
+
+h2 {
+  letter-spacing: -0.01em !important;
+}
+
+h3 {
+  letter-spacing: 0 !important;
+}
+
+
+/* ===== FINAL EARLY ACCESS LAYOUT FIXES ===== */
+/* Keeps hero visible under sticky nav, removes the large strip/extra gap, and fixes CTA visibility. */
+.hero {
+  padding: 42px 0 56px !important;
+  margin-top: 0 !important;
+}
+
+.hero-grid {
+  align-items: center !important;
+}
+
+.hero-actions {
+  margin-top: 28px !important;
+  gap: 28px !important;
+}
+
+.hero-actions .btn,
+.nav .btn,
+.apply .btn {
+  background: var(--blue) !important;
+  color: #FFFFFF !important;
+  border-color: var(--blue) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero-actions .btn-link {
+  color: var(--ink) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero + .section,
+#meet {
+  padding-top: 72px !important;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    padding: 36px 0 48px !important;
   }
 
-  .hero-image-card {
-    height: 260px;
+  .hero-actions .btn {
+    width: 100% !important;
   }
 }
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 32px 0 44px !important;
+  }
+}
+
 </style>
 </head>
 
@@ -726,7 +824,7 @@ footer .logo-img,
     <div class="reveal">
       <span class="eyebrow">Clinical Early Access</span>
       <h1>The NAD+ Doselet Clinical Early Access Program</h1>
-      <p>We're inviting a select group of clinician-led practices to join before our first commercial batch ships. No payment required. No purchase obligation – just a chance to be among the first to offer it.</p>
+      <p>We’re inviting a select group of clinician-led practices to join before our first commercial batch ships. No payment required. No purchase obligation – just a chance to be among the first to offer it.</p>
       <p class="hero-note">It takes less than five minutes to fill out the form linked below.</p>
 
       <div class="hero-actions">
@@ -735,11 +833,8 @@ footer .logo-img,
       </div>
     </div>
 
-    <!-- Wrapper provides the blob glow; card contains the image cleanly -->
-    <div class="hero-image-wrap reveal delay-1 float-soft">
-      <div class="hero-image-card">
-        <img src="early-access-student-pocket.jpg" alt="Person placing a Doselet into a shirt pocket">
-      </div>
+    <div class="image-card hero-image reveal delay-1 float-soft">
+      <img src="early-access-student-pocket.jpg" alt="Person placing a Doselet into a shirt pocket">
     </div>
   </div>
 </section>
@@ -750,7 +845,7 @@ footer .logo-img,
       <span class="eyebrow">Delivery Reimagined</span>
       <h2>Meet the Doselet.</h2>
       <p>A centimeter-sized, plant-based nanofiber patch applied to the inside of the cheek. It dissolves in seconds and delivers 10mg of NAD+ directly through the buccal mucosa. No needles, no pills, no fuss.</p>
-      <p>Patients place it, forget it and get on with their day. It's the daily NAD+ format they'll actually stick with between visits. We're thrilled to be the first to bring this delivery format to the nutraceuticals space.</p>
+      <p>Patients place it, forget it and get on with their day. It’s the daily NAD+ format they’ll actually stick with between visits. We’re thrilled to be the first to bring this delivery format to the nutraceuticals space.</p>
       <p>Doselets are sold in 30-packs, making them easy to retail per unit, bundle into a subscription or align with monthly clinic visits.</p>
     </div>
 
@@ -809,14 +904,14 @@ footer .logo-img,
         <div class="step-number">2</div>
         <div>
           <h3>We review your fit</h3>
-          <p>We're hand-selecting clinics. If yours is a match, we'll be in touch directly.</p>
+          <p>We’re hand-selecting clinics. If yours is a match, we’ll be in touch directly.</p>
         </div>
       </article>
 
       <article class="step reveal delay-2">
         <div class="step-number">3</div>
         <div>
-          <h3>You're invited to a briefing</h3>
+          <h3>You’re invited to a briefing</h3>
           <p>Qualified clinics are invited to a product or founder call to ask questions and learn more.</p>
         </div>
       </article>
@@ -825,7 +920,7 @@ footer .logo-img,
         <div class="step-number">4</div>
         <div>
           <h3>First-batch allocation is offered</h3>
-          <p>When the batch is ready, selected clinics receive full pricing, terms and an invoice upfront so you know exactly what you're committing to before you do. You pay only when your order ships.</p>
+          <p>When the batch is ready, selected clinics receive full pricing, terms and an invoice upfront so you know exactly what you’re committing to before you do. You pay only when your order ships.</p>
         </div>
       </article>
     </div>
@@ -840,7 +935,7 @@ footer .logo-img,
       <span class="eyebrow">Early Access Program</span>
       <h2>Ready to Join?</h2>
       <p>Submit your practice profile below. It takes less than five minutes and requires no payment or commitment at any stage.</p>
-      <p>We're looking forward to hearing from you.</p>
+      <p>We’re looking forward to hearing from you.</p>
       <p>Questions before you apply? Reach us directly at hello@doselets.com</p>
 
       <div class="hero-actions">
